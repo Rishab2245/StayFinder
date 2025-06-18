@@ -34,7 +34,7 @@ const HostDashboard = () => {
     queryFn: async () => {
       try {
         // Fetch host bookings
-        const bookingsResponse = await fetch('http://localhost:5000/api/bookings/host-bookings?limit=5', {
+        const bookingsResponse = await fetch('https://stayfinder-backend-5yvk.onrender.com/api/bookings/host-bookings?limit=5', {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ const HostDashboard = () => {
         });
         
         // Fetch host listings
-        const listingsResponse = await fetch('http://localhost:5000/api/listings/host/my-listings', {
+        const listingsResponse = await fetch('https://stayfinder-backend-5yvk.onrender.com/api/listings/host/my-listings', {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'

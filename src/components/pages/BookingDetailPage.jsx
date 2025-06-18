@@ -15,7 +15,7 @@ const BookingDetailPage = () => {
   const { data: booking, isLoading, isError } = useQuery({
     queryKey: ['booking', id],
     queryFn: async () => {
-      const response = await fetch(`http://localhost:5000/api/bookings/${id}`, {
+      const response = await fetch(`https://stayfinder-backend-5yvk.onrender.com/api/bookings/${id}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ const BookingDetailPage = () => {
   
   const handleCancelBooking = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/bookings/${id}/status`, {
+      const response = await fetch(`https://stayfinder-backend-5yvk.onrender.com/api/bookings/${id}/status`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,

@@ -21,6 +21,9 @@ import CreateListingPage from './components/pages/CreateListingPage';
 import EditListingPage from './components/pages/EditListingPage';
 import BookingDetailPage from './components/pages/BookingDetailPage';
 import PaymentPage from './components/pages/PaymentPage';
+import BecomeHostPage from './components/pages/BecomeHostPage';
+
+
 
 // Loading component
 import LoadingSpinner from './components/ui/LoadingSpinner';
@@ -144,6 +147,17 @@ const AppRoutes = () => {
           </ProtectedRoute>
         } 
       />
+
+      {/* Become Host route */}
+      <Route 
+        path="/become-host" 
+        element={
+          <ProtectedRoute>
+            <BecomeHostPage />
+          </ProtectedRoute>
+        } 
+      />
+
 
       {/* Host routes */}
       <Route 

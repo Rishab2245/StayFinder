@@ -169,7 +169,7 @@ export const generateStarRating = (rating) => {
 export const getImageUrl = (imagePath, fallback = '/placeholder-image.jpg') => {
   if (!imagePath) return fallback;
   if (imagePath.startsWith('http')) return imagePath;
-  return `${process.env.NODE_ENV === 'production' ? 'https://your-backend-domain.com' : 'http://localhost:5000'}${imagePath}`;
+  return `https://stayfinder-backend-5yvk.onrender.com/api ${imagePath}`;
 };
 
 export const generateImageAlt = (title, index = 0) => {

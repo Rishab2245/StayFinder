@@ -27,8 +27,10 @@ export const authAPI = {
     return response.data;
   },
 
-  becomeHost: async () => {
-    const response = await api.post('/auth/become-host');
+  becomeHost: async (hostData) => {
+    console.log('becomeHost called with data:', hostData);
+    const response = await api.post('/auth/become-host', hostData);
+    console.log('Response from becomeHost:', response);
     return response.data;
   },
 };

@@ -15,7 +15,7 @@ const BookingsPage = () => {
   const { data: bookingsData, isLoading, isError } = useQuery({
     queryKey: ['bookings'],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/bookings/my-bookings', {
+      const response = await fetch('https://stayfinder-backend-5yvk.onrender.com/api/bookings/my-bookings', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json'

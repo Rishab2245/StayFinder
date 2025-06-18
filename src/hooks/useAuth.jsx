@@ -228,9 +228,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Become host function
-  const becomeHost = async () => {
+   const becomeHost = async (hostData) => {
     try {
-      const response = await authAPI.becomeHost();
+      const response = await authAPI.becomeHost(hostData);
       const updatedUser = response.data.user;
 
       // Update localStorage
@@ -247,6 +247,7 @@ export const AuthProvider = ({ children }) => {
       return { success: false, error: errorMessage };
     }
   };
+
 
   // Clear error function
   const clearError = () => {

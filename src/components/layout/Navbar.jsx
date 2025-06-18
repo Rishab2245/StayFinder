@@ -35,18 +35,13 @@ const Navbar = () => {
 
   const handleBecomeHost = () => {
     if (isAuthenticated) {
-      // If user is authenticated, make them a host and redirect to host dashboard
-      becomeHost().then((result) => {
-        if (result.success) {
-          navigate('/host/dashboard');
-        } else {
-          // If already a host, just navigate to dashboard
-          navigate('/host/dashboard');
-        }
-      });
+      if (isHost()) {
+        navigate('/host/dashboard');
+      } else {
+        navigate('/become-host');
+      }
     } else {
-      // If not authenticated, redirect to register with host intent
-      navigate('/register?intent=host');
+      navigate('/register');
     }
   };
 
